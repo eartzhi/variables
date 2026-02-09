@@ -88,86 +88,89 @@ fn main() {
 
     // println!("Значение x равно {}", x)    
 
-    let number =7;
+    // let number =7;
 
-    if number < 5 {
-        println!("True");
-    }
-    else {
-        println!("False");
-    }
+    // if number < 5 {
+    //     println!("True");
+    // }
+    // else {
+    //     println!("False");
+    // }
 
-    if number != 0 {
-        println!("Not null")
-    }
+    // if number != 0 {
+    //     println!("Not null")
+    // }
 
-    let number =6;
+    // let number =6;
 
-    if number % 4 == 0 {
-        println!("Div 4");
-    } else if number % 3 == 0 {
-        println!("Div 3");
-    } else if number % 3 == 0 {
-        println!("Div 2");
-    } else {
-        println!("Not div 4, 3, 2")
-    }
+    // if number % 4 == 0 {
+    //     println!("Div 4");
+    // } else if number % 3 == 0 {
+    //     println!("Div 3");
+    // } else if number % 3 == 0 {
+    //     println!("Div 2");
+    // } else {
+    //     println!("Not div 4, 3, 2")
+    // }
 
-    let comdition =true;
-    let number = if comdition {
-        5
-    } else {
-        6
-    };
+    // let comdition =true;
+    // let number = if comdition {
+    //     5
+    // } else {
+    //     6
+    // };
 
-    println!("Значение числа равно {}", number);
+    // println!("Значение числа равно {}", number);
 
-    loop {
-        println!("One more time");
-        break;
-    }
+    // loop {
+    //     println!("One more time");
+    //     break;
+    // }
 
-    let mut counter =0;
+    // let mut counter =0;
 
-    let result = loop {
-        counter += 1;
+    // let result = loop {
+    //     counter += 1;
 
-        if counter == 10 {
-            break  counter*2;
-        }
-    };
-    println!("Result  is {}", result);
+    //     if counter == 10 {
+    //         break  counter*2;
+    //     }
+    // };
+    // println!("Result  is {}", result);
 
 
-    let mut number =3;
+    // let mut number =3;
 
-    while number != 0 {
-        println!("{}!", number);
+    // while number != 0 {
+    //     println!("{}!", number);
 
-        number = number - 1;
-    }
-    println!("Go!");
+    //     number = number - 1;
+    // }
+    // println!("Go!");
 
-    let a = [10, 20, 30, 40, 50];
-    let mut index = 0;
+    // let a = [10, 20, 30, 40, 50];
+    // let mut index = 0;
 
-    while index < 5 {
-        println!("Value is {}\n", a[index]);
+    // while index < 5 {
+    //     println!("Value is {}\n", a[index]);
 
-        index =  index +1
-    }
+    //     index =  index +1
+    // }
 
-    let a = [10, 20, 30, 40, 50];
+    // let a = [10, 20, 30, 40, 50];
 
-    for element in a.iter() {
-        println!("Value is {}", element);
-    }
+    // for element in a.iter() {
+    //     println!("Value is {}", element);
+    // }
 
-    for number in (1..4).rev() {
-        println!("{}!", number);
-    }
+    // for number in (1..4).rev() {
+    //     println!("{}!", number);
+    // }
 
-    println!("Go!\n");
+    // println!("Go!\n");
+
+    let s = "hello";
+    
     
 }
 
