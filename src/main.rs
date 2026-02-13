@@ -169,9 +169,42 @@ fn main() {
 
     // println!("Go!\n");
 
-    let s = "hello";
+    // let s = "hello";
+
+    // let mut s = String::from("hello");
     
-    
+    // s.push_str(", world!"); // push_str() добавляет литерал к экземпляру типа String
+
+    // println!("{}",s);
+
+    // let x =5;
+    // let y = x;
+
+    // println!("x = {}, y = {}", x, y);
+
+    // // let s1 = String::from("hello");
+    // // let s2 = s1;
+
+    // let s1 = String::from("hello");
+    // let s2 = s1.clone();
+
+    // println!("s1 = {}, s2 = {}", s1, s2);
+
+    let s = String::from("hello"); // s входит в область видимости
+    takes_ownership(s); // значение s перемещается в функцию...
+    // ... и поэтому больше здесь не действует
+    let x = 5; // x входит в область видимости
+    makes_copy(x); // x переместится в функцию, но
+    // i32 копируема, поэтому нормально,
+    // если x будет использоваться после этого
+    // println!("{}",s);
+
+    let s2 = String::from("hello"); // s2 входит в область видимости
+    let s3 = takes_and_gives_back(s2); // s2 перемещается в
+    // takes_and_gives_back, которая также
+    // перемещает свое возвращаемое
+    // значение в s3
+    println!("{}",s3);
 }
 
 // fn another_function(x: i32) {
@@ -202,3 +235,18 @@ fn main() {
 // fn plus_one(x: i32) ->i32 {
 //     x+1
 // }
+
+fn takes_ownership(some_string: String) { // some_string входит
+    // в область видимости
+    println!("{}", some_string);
+}
+
+fn makes_copy(some_integer: i32) { // some_integer входит в область видимости
+    println!("{}", some_integer);
+} // Здесь some_integer выходит из области видимости.
+// Ничего особенного не происходит.
+
+fn takes_and_gives_back(a_string: String) -> String { // a_string приходит
+// в область видимости
+    a_string // a_string возвращается и выносится в вызывающую функцию
+}
