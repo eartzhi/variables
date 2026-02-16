@@ -190,21 +190,94 @@ fn main() {
 
     // println!("s1 = {}, s2 = {}", s1, s2);
 
-    let s = String::from("hello"); // s входит в область видимости
-    takes_ownership(s); // значение s перемещается в функцию...
-    // ... и поэтому больше здесь не действует
-    let x = 5; // x входит в область видимости
-    makes_copy(x); // x переместится в функцию, но
-    // i32 копируема, поэтому нормально,
-    // если x будет использоваться после этого
-    // println!("{}",s);
+    // let s = String::from("hello"); // s входит в область видимости
+    // takes_ownership(s); // значение s перемещается в функцию...
+    // // ... и поэтому больше здесь не действует
+    // let x = 5; // x входит в область видимости
+    // makes_copy(x); // x переместится в функцию, но
+    // // i32 копируема, поэтому нормально,
+    // // если x будет использоваться после этого
+    // // println!("{}",s);
 
-    let s2 = String::from("hello"); // s2 входит в область видимости
-    let s3 = takes_and_gives_back(s2); // s2 перемещается в
+    // let s2 = String::from("hello"); // s2 входит в область видимости
+    // let s3 = takes_and_gives_back(s2); // s2 перемещается в
     // takes_and_gives_back, которая также
     // перемещает свое возвращаемое
     // значение в s3
-    println!("{}",s3);
+    // println!("{}",s3);
+
+    let s = "Hello, world!";
+
+    let my_string = String::from("hello world!");
+
+    // first_word работает на срезах экземпляров типа `String`
+    let world = first_word(&my_string[..]);
+
+    let my_string_literal = "hello world";
+
+    // first_word работает на срезах строковых литералов
+    let world = first_word(&my_string_literal[..]);
+
+    // Так как строковые литералы уже *являются* строковыми срезами,
+    // это также работает без срезового синтаксиса!
+
+    let word = first_word(my_string_literal);
+
+    let a = [1, 2, 3, 4, 5];
+
+    let slice = &a[1..3];
+
+    println!("{}", slice[1]);
+    
+    struct User {
+        username: String,
+        email: String,
+        sign_in_count: u64,
+        active:bool,
+    }
+
+
+    let mut user1 =User {
+        email: String::from("someone@examplr.com"),
+        username: String::from("someusername123"),
+        active: true,
+        sign_in_count: 1,
+    };
+
+    user1.email = String::from("anotheremail@example.com");
+
+
+fn build_user (email: String, username: String) -> User {
+    User {
+        email,
+        username,
+        active: true, 
+        sign_in_count: 1,
+    }
+}
+ 
+    let user2 = User {
+        email: String::from("another@example.com"),
+        username: String::from("anotherusername567"),
+        active: user1.active,
+        sign_in_count: user1.sign_in_count,
+    };
+
+    let user2 = User {
+        email: String::from("another@example.com"),
+        username: String::from("anotherusername"),
+        ..user1
+    };
+
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
+
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+
+    println!("{}", black.1)
+
+
 }
 
 // fn another_function(x: i32) {
@@ -249,4 +322,14 @@ fn makes_copy(some_integer: i32) { // some_integer входит в област�
 fn takes_and_gives_back(a_string: String) -> String { // a_string приходит
 // в область видимости
     a_string // a_string возвращается и выносится в вызывающую функцию
+}
+
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+        return &s[0..i];
+        }
+    }
+    &s[..]
 }
