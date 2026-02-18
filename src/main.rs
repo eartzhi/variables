@@ -204,78 +204,112 @@ fn main() {
     // takes_and_gives_back, которая также
     // перемещает свое возвращаемое
     // значение в s3
-    // println!("{}",s3);
+//     // println!("{}",s3);
 
-    let s = "Hello, world!";
+//     let s = "Hello, world!";
 
-    let my_string = String::from("hello world!");
+//     let my_string = String::from("hello world!");
 
-    // first_word работает на срезах экземпляров типа `String`
-    let world = first_word(&my_string[..]);
+//     // first_word работает на срезах экземпляров типа `String`
+//     let world = first_word(&my_string[..]);
 
-    let my_string_literal = "hello world";
+//     let my_string_literal = "hello world";
 
-    // first_word работает на срезах строковых литералов
-    let world = first_word(&my_string_literal[..]);
+//     // first_word работает на срезах строковых литералов
+//     let world = first_word(&my_string_literal[..]);
 
-    // Так как строковые литералы уже *являются* строковыми срезами,
-    // это также работает без срезового синтаксиса!
+//     // Так как строковые литералы уже *являются* строковыми срезами,
+//     // это также работает без срезового синтаксиса!
 
-    let word = first_word(my_string_literal);
+//     let word = first_word(my_string_literal);
 
-    let a = [1, 2, 3, 4, 5];
+//     let a = [1, 2, 3, 4, 5];
 
-    let slice = &a[1..3];
+//     let slice = &a[1..3];
 
-    println!("{}", slice[1]);
+//     println!("{}", slice[1]);
     
-    struct User {
-        username: String,
-        email: String,
-        sign_in_count: u64,
-        active:bool,
-    }
+//     struct User {
+//         username: String,
+//         email: String,
+//         sign_in_count: u64,
+//         active:bool,
+//     }
 
 
-    let mut user1 =User {
-        email: String::from("someone@examplr.com"),
-        username: String::from("someusername123"),
-        active: true,
-        sign_in_count: 1,
-    };
+//     let mut user1 =User {
+//         email: String::from("someone@examplr.com"),
+//         username: String::from("someusername123"),
+//         active: true,
+//         sign_in_count: 1,
+//     };
 
-    user1.email = String::from("anotheremail@example.com");
+//     user1.email = String::from("anotheremail@example.com");
 
 
-fn build_user (email: String, username: String) -> User {
-    User {
-        email,
-        username,
-        active: true, 
-        sign_in_count: 1,
-    }
-}
+// fn build_user (email: String, username: String) -> User {
+//     User {
+//         email,
+//         username,
+//         active: true, 
+//         sign_in_count: 1,
+//     }
+// }
  
-    let user2 = User {
-        email: String::from("another@example.com"),
-        username: String::from("anotherusername567"),
-        active: user1.active,
-        sign_in_count: user1.sign_in_count,
-    };
+//     let user2 = User {
+//         email: String::from("another@example.com"),
+//         username: String::from("anotherusername567"),
+//         active: user1.active,
+//         sign_in_count: user1.sign_in_count,
+//     };
 
-    let user2 = User {
-        email: String::from("another@example.com"),
-        username: String::from("anotherusername"),
-        ..user1
-    };
+//     let user2 = User {
+//         email: String::from("another@example.com"),
+//         username: String::from("anotherusername"),
+//         ..user1
+//     };
 
-    struct Color(i32, i32, i32);
-    struct Point(i32, i32, i32);
+//     struct Color(i32, i32, i32);
+//     struct Point(i32, i32, i32);
 
-    let black = Color(0, 0, 0);
-    let origin = Point(0, 0, 0);
+//     let black = Color(0, 0, 0);
+//     let origin = Point(0, 0, 0);
 
-    println!("{}", black.1)
+//     println!("{}", black.1)
+
+
+    // let width1 = 30;
+    // let heigh1 = 50;
+    // let rect1 = (30, 50);
+
+    // println!("Площадь прямоугольника {} квадратным пикселям", area(rect1));
+
+    #[derive(Debug)]
+    struct Rectangle {
+        width: u32,
+        height: u32,
+    }
+
+    impl Rectangle {
+        fn area (&self) -> u32 {
+            self.width * self.height
+        }
+        
+    }
+
+
+    let rect1 = &Rectangle { width: 30, height: 50 };
+
+// fn area (rectangle: &Rectangle) -> u32 {
+//     rectangle.width * rectangle.height
+// }
+    println!("rect1 равен {:?}", rect1);
+
+    println!("rect1 равен {:#?}", rect1);
+
+    println!("Площадь прямоугольника {} квадратным пикселям", rect1.area());
+
+
 
 
 }
@@ -333,3 +367,9 @@ fn first_word(s: &str) -> &str {
     }
     &s[..]
 }
+
+// fn area(dimensions: (u32, u32)) -> u32 {
+//     dimensions.0 * dimensions.1
+// }
+
+
