@@ -1,3 +1,5 @@
+use std::net::Ipv4Addr;
+
 fn main() {
     // let mut x = 5;
     // println!("Значение x равно {}", x);
@@ -284,30 +286,94 @@ fn main() {
 
     // println!("Площадь прямоугольника {} квадратным пикселям", area(rect1));
 
-    #[derive(Debug)]
-    struct Rectangle {
-        width: u32,
-        height: u32,
-    }
+    // #[derive(Debug)]
+    // struct Rectangle {
+    //     width: u32,
+    //     height: u32,
+    // }
 
-    impl Rectangle {
-        fn area (&self) -> u32 {
-            self.width * self.height
-        }
+    // impl Rectangle {
+    //     fn area (&self) -> u32 {
+    //         self.width * self.height
+    //     }
+
+    //     fn can_hold (&self, rect2: &Rectangle) -> bool {
+    //         (self.height > rect2.height) && (self.width > rect2.width)
+
+    //     }
+
+    //     fn squere (size: u32) -> Rectangle {
+    //         Rectangle { width: size, height: size }
+    //     }
         
-    }
+    // }
 
 
-    let rect1 = &Rectangle { width: 30, height: 50 };
+    // let rect1 = &Rectangle { width: 30, height: 50 };
+    // let rect2 = &Rectangle { width: 10, height: 40 };
+    // let rect3 = &Rectangle { width: 60, height: 45 };
+    // let sq = Rectangle::squere(3);
+
+    // println!("Может ли rect1 содержать в себе rect2? {}", rect1.can_hold(&rect2));
+    // println!("Может ли rect1 содержать в себе rect3? {}", rect1.can_hold(&rect3));
+    // println!("Может ли rect1 содержать в себе sq? {}", rect1.can_hold(&sq));
+
+
+
+
 
 // fn area (rectangle: &Rectangle) -> u32 {
 //     rectangle.width * rectangle.height
-// }
-    println!("rect1 равен {:?}", rect1);
+// // }
+//     println!("rect1 равен {:?}", rect1);
 
-    println!("rect1 равен {:#?}", rect1);
+//     println!("rect1 равен {:#?}", rect1);
 
-    println!("Площадь прямоугольника {} квадратным пикселям", rect1.area());
+//     println!("Площадь прямоугольника {} квадратным пикселям", rect1.area());
+
+    enum IpAddkind {
+        V4, 
+        V6,
+        
+    }
+
+    struct IpAddr {
+        kind: IpAddkind,
+        adress: String,
+    }
+
+    struct Ipv4Addr {
+
+    }
+
+    struct Ipv6Addr {
+
+    }
+
+    enum IpAddr {
+        V4(Ipv4Addr),
+        V6(Ipv6Addr),
+    }
+
+    let four = IpAddkind::V4;
+    let six = IpAddkind::V6;
+
+    let home = IpAddr {
+        kind: IpAddkind::V4,
+        adress: String::from("127.0.0.1"),
+    };
+
+    let loopback = IpAddr {
+        kind: IpAddkind::V6,
+        adress: String::from("::1"),
+    };
+
+    fn route (ip_kind: IpAddkind) {
+
+    }
+
+    route(IpAddkind::V4);
+    route(IpAddkind::V6);
 
 
 
@@ -343,30 +409,30 @@ fn main() {
 //     x+1
 // }
 
-fn takes_ownership(some_string: String) { // some_string входит
-    // в область видимости
-    println!("{}", some_string);
-}
+// fn takes_ownership(some_string: String) { // some_string входит
+//     // в область видимости
+//     println!("{}", some_string);
+// }
 
-fn makes_copy(some_integer: i32) { // some_integer входит в область видимости
-    println!("{}", some_integer);
-} // Здесь some_integer выходит из области видимости.
-// Ничего особенного не происходит.
+// fn makes_copy(some_integer: i32) { // some_integer входит в область видимости
+//     println!("{}", some_integer);
+// } // Здесь some_integer выходит из области видимости.
+// // Ничего особенного не происходит.
 
-fn takes_and_gives_back(a_string: String) -> String { // a_string приходит
-// в область видимости
-    a_string // a_string возвращается и выносится в вызывающую функцию
-}
+// fn takes_and_gives_back(a_string: String) -> String { // a_string приходит
+// // в область видимости
+//     a_string // a_string возвращается и выносится в вызывающую функцию
+// }
 
-fn first_word(s: &str) -> &str {
-    let bytes = s.as_bytes();
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-        return &s[0..i];
-        }
-    }
-    &s[..]
-}
+// fn first_word(s: &str) -> &str {
+//     let bytes = s.as_bytes();
+//     for (i, &item) in bytes.iter().enumerate() {
+//         if item == b' ' {
+//         return &s[0..i];
+//         }
+//     }
+//     &s[..]
+// }
 
 // fn area(dimensions: (u32, u32)) -> u32 {
 //     dimensions.0 * dimensions.1
