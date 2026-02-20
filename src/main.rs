@@ -355,6 +355,33 @@ fn main() {
         V6(Ipv6Addr),
     }
 
+    enum Message {
+        Quit, 
+        Move {x: i32, y: i32},
+        Write(String),
+        ChangeColor(i32, i32, i32),
+    }
+
+    impl Message {
+        fn call (&self) {
+            //etghrthg
+        }
+        
+    }
+
+    // enum Optiom<T> {
+    //     Some(T),
+    //     None,
+    // }
+
+    let m = Message::Write(String::from("hello"));
+    m.call();
+
+    let some_number = Some(5);
+    let some_string = Some("literal");
+
+    let absent_number: Option<i32> = None;
+
     let four = IpAddkind::V4;
     let six = IpAddkind::V6;
 
@@ -374,6 +401,34 @@ fn main() {
 
     route(IpAddkind::V4);
     route(IpAddkind::V6);
+
+    let hello = String::from(" ");
+    let hello = String::from("Dobrý den");
+    let hello = String::from("Hello");
+    let hello = String::from(" ");
+    let hello = String::from(" ");
+    let hello = String::from(" ");
+    let hello = String::from(" ");
+    let hello = String::from(" ");
+    let hello = String::from("Olá");
+    let hello = String::from("Здравствуйте");
+    let hello: String = String::from("Hola");
+
+    enum Coin {
+        Penny, 
+        Nickel,
+        Dime, 
+        Quarter,
+    }
+
+    fn value_in_cents (coin: Coin) -> u8 {
+        match coin {   
+        Coin::Penny => 1, 
+        Coin::Nickel => 5, 
+        Coin::Dime => 10,
+        Coin::Quarter => 25,
+        }
+    }
 
 
 
