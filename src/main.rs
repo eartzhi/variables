@@ -1,4 +1,4 @@
-use std::net::Ipv4Addr;
+// use std::net::Ipv4Addr;
 
 fn main() {
     // let mut x = 5;
@@ -331,103 +331,150 @@ fn main() {
 
 //     println!("Площадь прямоугольника {} квадратным пикселям", rect1.area());
 
-    enum IpAddkind {
-        V4, 
-        V6,
+    // enum IpAddkind {
+    //     V4, 
+    //     V6,
         
-    }
+    // }
 
-    struct IpAddr {
-        kind: IpAddkind,
-        adress: String,
-    }
+    // struct IpAddr {
+    //     kind: IpAddkind,
+    //     adress: String,
+    // }
 
-    struct Ipv4Addr {
+    // struct Ipv4Addr {
 
-    }
+    // }
 
-    struct Ipv6Addr {
+    // struct Ipv6Addr {
 
-    }
+    // }
 
-    enum IpAddr {
-        V4(Ipv4Addr),
-        V6(Ipv6Addr),
-    }
+    // enum IpAddr {
+    //     V4(Ipv4Addr),
+    //     V6(Ipv6Addr),
+    // }
 
-    enum Message {
-        Quit, 
-        Move {x: i32, y: i32},
-        Write(String),
-        ChangeColor(i32, i32, i32),
-    }
+    // enum Message {
+    //     Quit, 
+    //     Move {x: i32, y: i32},
+    //     Write(String),
+    //     ChangeColor(i32, i32, i32),
+    // }
 
-    impl Message {
-        fn call (&self) {
-            //etghrthg
-        }
+    // impl Message {
+    //     fn call (&self) {
+    //         //etghrthg
+    //     }
         
-    }
+    // }
 
-    // enum Optiom<T> {
+    // enum Option<T> {
     //     Some(T),
     //     None,
     // }
 
-    let m = Message::Write(String::from("hello"));
-    m.call();
+    // let m = Message::Write(String::from("hello"));
+    // m.call();
 
-    let some_number = Some(5);
-    let some_string = Some("literal");
+    // let some_number = Some(5);
+    // let some_string = Some("literal");
 
-    let absent_number: Option<i32> = None;
+    // let absent_number: Option<i32> = None;
 
-    let four = IpAddkind::V4;
-    let six = IpAddkind::V6;
+    // let four = IpAddkind::V4;
+    // let six = IpAddkind::V6;
 
-    let home = IpAddr {
-        kind: IpAddkind::V4,
-        adress: String::from("127.0.0.1"),
-    };
+    // let home = IpAddr {
+    //     kind: IpAddkind::V4,
+    //     adress: String::from("127.0.0.1"),
+    // };
 
-    let loopback = IpAddr {
-        kind: IpAddkind::V6,
-        adress: String::from("::1"),
-    };
+    // let loopback = IpAddr {
+    //     kind: IpAddkind::V6,
+    //     adress: String::from("::1"),
+    // };
 
-    fn route (ip_kind: IpAddkind) {
+    // fn route (ip_kind: IpAddkind) {
 
-    }
+    // }
 
-    route(IpAddkind::V4);
-    route(IpAddkind::V6);
+    // route(IpAddkind::V4);
+    // route(IpAddkind::V6);
 
-    let hello = String::from(" ");
-    let hello = String::from("Dobrý den");
-    let hello = String::from("Hello");
-    let hello = String::from(" ");
-    let hello = String::from(" ");
-    let hello = String::from(" ");
-    let hello = String::from(" ");
-    let hello = String::from(" ");
-    let hello = String::from("Olá");
-    let hello = String::from("Здравствуйте");
-    let hello: String = String::from("Hola");
+    // let hello = String::from(" ");
+    // let hello = String::from("Dobrý den");
+    // let hello = String::from("Hello");
+    // let hello = String::from(" ");
+    // let hello = String::from(" ");
+    // let hello = String::from(" ");
+    // let hello = String::from(" ");
+    // let hello = String::from(" ");
+    // let hello = String::from("Olá");
+    // let hello = String::from("Здравствуйте");
+    // let hello: String = String::from("Hola");
 
-    enum Coin {
-        Penny, 
-        Nickel,
-        Dime, 
-        Quarter,
-    }
+    // enum UsState  {
+    //     Alabama,
+    //     Alaska,
+        
+    // }
 
-    fn value_in_cents (coin: Coin) -> u8 {
-        match coin {   
-        Coin::Penny => 1, 
-        Coin::Nickel => 5, 
-        Coin::Dime => 10,
-        Coin::Quarter => 25,
+    // enum Coin {
+    //     Penny, 
+    //     Nickel,
+    //     Dime, 
+    //     Quarter(UsState),
+    // }
+
+
+
+    // fn value_in_cents (coin: Coin) -> u8 {
+    //     match coin {   
+    //     Coin::Penny => 1, 
+    //     Coin::Nickel => 5, 
+    //     Coin::Dime => 10,
+    //     Coin::Quarter(state) => {
+    //         println!("Четвертак из штата {:?}!", state);
+    //     25},
+    //     }
+    // }
+
+    // value_in_cents(Coin::Quarter(UsState::Alaska));
+
+    fn plus_one(x: Option<i32>) -> Option<i32> {
+        match  x {
+            None => None,
+            Some(i) => Some(i + 1),
+            
         }
+    }
+
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None); 
+
+    let some_u8_value = 0u8;
+    match  some_u8_value {
+        1 => println!("one"),
+        2 => println!("three"),
+        5 => println!("five"),
+        7 => println!("seven"),
+        _ => (),
+        
+    }
+
+    let some_u8_value = Some(0u8);
+    match  some_u8_value {
+        Some(3) => println!("three"),
+        _ => (),
+        
+    }
+
+    if let Some(3) = some_u8_value {
+        println!("three");
+    } else {
+        println!("not three");
     }
 
 
