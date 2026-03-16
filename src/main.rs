@@ -477,10 +477,28 @@ fn main() {
     //     println!("not three");
     // }
 
+    let v: Vec<i32> = Vec::new();
+    let v =vec![1, 2, 3];
+    let mut v = Vec::new();
 
+    v.push(5);
+    v.push(6);
+    v.push(7);
 
+    let v = vec![1,2,3,4,5];
 
+    let third: &i32 = &v[2];
+    println!("Третий элемент равен {}", third);
+
+    match v.get(2) {
+        Some(third) => println!("Третий элемент равен {}", third),
+        None => println!("Третий элемент отсутствует."),
+    }
 }
+
+
+
+
 
 // fn another_function(x: i32) {
 //     println!("Значение x равно {}", x);
