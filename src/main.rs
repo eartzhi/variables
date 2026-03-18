@@ -602,8 +602,9 @@ fn main() {
 
     // println!("{:?}", map);
 
-    let mut v = vec![1, 3, 5, 10, 90, 8, 80];
-    let v_sorted = v.sort().clone();
+    let v = vec![1, 3, 5, 10, 90, 8, 80];
+    let mut v_sorted = v.clone();
+    v_sorted.sort();
 
     println!("{:?}", v_sorted);
 
