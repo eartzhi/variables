@@ -477,68 +477,148 @@ fn main() {
     //     println!("not three");
     // }
 
-    let v: Vec<i32> = Vec::new();
-    let v =vec![1, 2, 3];
-    let mut v = Vec::new();
+    // let v: Vec<i32> = Vec::new();
+    // let v =vec![1, 2, 3];
+    // let mut v = Vec::new();
 
-    v.push(5);
-    v.push(6);
-    v.push(7);
+    // v.push(5);
+    // v.push(6);
+    // v.push(7);
 
-    let v = vec![1,2,3,4,5];
+    // let v = vec![1,2,3,4,5];
 
-    let third: &i32 = &v[2];
-    println!("Третий элемент равен {}", third);
+    // let third: &i32 = &v[2];
+    // println!("Третий элемент равен {}", third);
 
-    match v.get(2) {
-        Some(third) => println!("Третий элемент равен {}", third),
-        None => println!("Третий элемент отсутствует."),
-    }
+    // match v.get(2) {
+    //     Some(third) => println!("Третий элемент равен {}", third),
+    //     None => println!("Третий элемент отсутствует."),
+    // }
 
-    let mut v = vec![100, 32, 57];
-    for i in  &mut v {
-        *i += 50;
-        println!("{}", i)
-    }
+    // let mut v = vec![100, 32, 57];
+    // for i in  &mut v {
+    //     *i += 50;
+    //     println!("{}", i)
+    // }
 
-    enum SpreadsheetCell {
-        Int(i32),
-        Float(f64),
-        Text(String),
-    }
+    // enum SpreadsheetCell {
+    //     Int(i32),
+    //     Float(f64),
+    //     Text(String),
+    // }
 
-    let row = vec![
-        SpreadsheetCell::Int(3),
-        SpreadsheetCell::Text(String::from("blue")),
-        SpreadsheetCell::Float(10.12),
-        ];
+    // let row = vec![
+    //     SpreadsheetCell::Int(3),
+    //     SpreadsheetCell::Text(String::from("blue")),
+    //     SpreadsheetCell::Float(10.12),
+    //     ];
 
-    let mut s = String::new();
-    let data = "начальное содержимое"; 
-    let s = data.to_string();
+    // let mut s = String::new();
+    // let data = "начальное содержимое"; 
+    // let s = data.to_string();
 
-    let s = "начальное содержимое".to_string();
-    let s = String::from("начальное содержимое");
+    // let s = "начальное содержимое".to_string();
+    // let s = String::from("начальное содержимое");
 
-    let mut s = String::from("foo");
+    // let mut s = String::from("foo");
 
-    s.push_str("bar");
+    // s.push_str("bar");
 
-    println!("{}", s);
+    // println!("{}", s);
 
-    let s1 = String::from("Hello, ");
-    let s2 = String::from("world");
-    let s3 = s1 + &s2;
+    // let s1 = String::from("Hello, ");
+    // let s2 = String::from("world");
+    // let s3 = s1 + &s2;
 
-    println!("{}", s3);
+    // println!("{}", s3);
 
-    let s1 = String::from("tic");
-    let s2 = String::from("tac");
-    let s3 = String::from("toe");
+    // let s1 = String::from("tic");
+    // let s2 = String::from("tac");
+    // let s3 = String::from("toe");
 
-    let s3 = format!("{}-{}-{}", s1, s2, s3);
+    // let s3 = format!("{}-{}-{}", s1, s2, s3);
 
-    println!("{}", s3);
+    // println!("{}", s3);
+
+    // for c in "коллекции".chars() {
+    //     println!("{}", c);
+    // }
+
+    // for b in "коллекции".bytes() {
+    //     println!("{}", b);
+    // }
+
+    // use::std::collections::HashMap;
+
+    // let mut scores = HashMap::new();
+
+    // scores.insert(String::from("blue"), 10);
+    // scores.insert(String::from("yellow"), 50);
+
+    // let teams = vec![String::from("blue"), String::from("yellow")];
+    // let initial_scores = vec![10, 50];
+
+    // let scores: HashMap<_, _> = teams.iter().zip(initial_scores.iter()).collect();
+
+    // println!("{:?}", scores);
+
+    // let field_name = String::from("Любимый цвет");
+
+    // let field_value = String::from("Blue");
+
+    // let mut map = HashMap::new();
+    // map.insert(field_name, field_value);
+
+    // // println!("{}", field_name);
+
+    // let team_name = String::from("blue");
+
+    // let score = scores.get(&team_name);
+
+    // println!("{:?}", score);
+
+    // for (key, value) in &scores {
+    //     println!("{} : {}", key, value);
+    // }
+
+    // scores.insert(String::from("blue"), 25);
+
+    // println!("{:?}", scores);
+
+    // scores.entry(String::from("yellow")).or_insert(50);
+    // scores.entry(String::from("blue")).or_insert(50);
+
+    // println!("{:?}", scores);
+
+    // let text = "здравствуй мир чудесный мир";
+
+    // let mut map = HashMap::new();
+
+    // for word in text.split_whitespace() {
+    //     let count = map.entry(word).or_insert(0);
+    //     *count += 1;
+    //     println!("{}", *count);
+    // }
+
+    // println!("{:?}", map);
+
+    let mut v = vec![1, 3, 5, 10, 90, 8, 80];
+    let v_sorted = v.sort().clone();
+
+    println!("{:?}", v_sorted);
+
+
+
+
+
+
+
+
+    
+
+
+
+
 
 
     
