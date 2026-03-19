@@ -607,55 +607,47 @@ fn main() {
         for i in &v {
             summ += *i;
         }
-        let mut total: f32 = 0.0;
-        total = (summ as f32)   / (v.len() as f32);
+        // let mut total: f32 = 0.0;
+        let total = (summ as f32)   / (v.len() as f32);
         total
     }
 
-    // fn median(v: Vec<i32>) -> f32 {
-    //     v.sort();
-    //     let mut total: f32 = 0.0;
-    //     if v.len()%2 == 0 {
-    //         let mut m: i32 = (v.len()/2) as i32;
-    //         total = v.get(m) + v.get(m+1);
-    //         total
-    //     }
-    //     else {
-    //         total
-    //     }
+    fn median(v: Vec<i32>) -> f32 {
+        v.sort();
+        let mut total: f32 = 0.0;
+        if v.len()%2 == 0 {
+            let mut m = v.len()/2;
 
-        
-    // }
-    fn median(mut v: Vec<i32>) -> Result<i32, &'static str> {
-        if v.is_empty() {
-            return Err("Вектор пустой — медиану вычислить нельзя");
+            total = &v[m];
+            total
         }
-        v.sort_by(|a, b| a.partial_cmp(b).unwrap()); // предполагаем, что нет NaN
-        let n = v.len();
-        let mid = n / 2;
-        if n % 2 == 1 {
-            Ok(v[mid])
-        } else {
-            Ok((v[mid - 1] + v[mid]) / 2)
-        }
+        else {
+            total
+        }    
     }
+
+
+    // fn median(mut v: Vec<i32>) -> Result<i32, &'static str> {
+    //     if v.is_empty() {
+    //         return Err("Вектор пустой — медиану вычислить нельзя");
+    //     }
+    //     v.sort_by(|a, b| a.partial_cmp(b).unwrap()); // предполагаем, что нет NaN
+    //     let n = v.len();
+    //     let mid = n / 2;
+    //     if n % 2 == 1 {
+    //         Ok(v[mid])
+    //     } else {
+    //         Ok((v[mid - 1] + v[mid]) / 2)
+    //     }
+    // }
 
 
     let v = vec![1, 3, 5, 10, 90, 8, 80];
 
     println!("{:?}", middle(v));
-    let v: i32 = vec![1, 3, 5, 10, 90, 8, 80];
+    let v = vec![1, 3, 5, 10, 90, 8, 80];
+
     println!("{:?}", median(v));
-
-
-
-
-
-
-
-
-    
-
 
 
 
