@@ -1,5 +1,7 @@
 // use std::net::Ipv4Addr;
 
+use std::collections::HashMap;
+
 fn main() {
     // let mut x = 5;
     // println!("Значение x равно {}", x);
@@ -613,17 +615,35 @@ fn main() {
     }
 
     fn median(v: Vec<i32>) -> f32 {
-        v.sort();
-        let mut total: f32 = 0.0;
-        if v.len()%2 == 0 {
-            let mut m = v.len()/2;
-
-            total = &v[m];
-            total
+        let mut p = v.clone();
+        p.sort();
+        if p.len()%2 == 0 {
+            let m: usize = p.len()/2;
+            ((p[m-1] + p[m]) as f32)/2.0
+   
         }
         else {
-            total
+            let m: usize = p.len()/2;
+            p[m+1] as f32
         }    
+    }
+
+    fn mode(v: Vec<i32>) ->  i32 {
+        let mut counter = HashMap::new();
+        for i in v {
+            let count = counter.entry(i).or_insert(0);
+            *count += 1;
+        }
+        let mut m = 0;
+        let mut val = 0;
+        for (key, value) in &counter {
+            if *value > val {
+                val = *value;
+                m = *key;
+            }
+        }
+        m
+
     }
 
 
@@ -645,17 +665,22 @@ fn main() {
     let v = vec![1, 3, 5, 10, 90, 8, 80];
 
     println!("{:?}", middle(v));
-    let v = vec![1, 3, 5, 10, 90, 8, 80];
+    let v = vec![1, 3, 5, 10, 90, 8, 80, 7];
 
     println!("{:?}", median(v));
+
+    let mut v = vec![1, 3, 5, 10, 90, 8, 80, 7];
+    v.sort();
+    println!("{:?}", v);
+
+    let v = vec![1, 3, 5, 10, 90, 8, 80, 5, 10, 20, 10];
+    println!("{:?}", mode(v));
 
 
 
 
 
     
-
-
 
 }
 
