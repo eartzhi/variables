@@ -643,6 +643,33 @@ fn main() {
             }
         }
         m
+    }
+
+    fn piglatin (s: String) -> String {
+        let cons = vec!['e', 'E', 'y', 'Y', 'u', 'U', 'o', 'O', 'a', 'A'];
+        let mut total  = String::new();
+
+        for word in s.split_whitespace() { 
+            let first_l = word.chars().nth(0).unwrap();
+            if cons.contains(&first_l) {
+                total += &word;
+                total.push('-');
+                total.push('h');
+                total.push('a');
+                total.push('y');
+                total.push(' ');
+
+            } else {
+                total += &word[1..];
+                total.push('-');
+                total.push(first_l);
+                total.push('a');
+                total.push('y');
+                total.push(' ');
+            }
+
+        }
+        total
 
     }
 
@@ -675,6 +702,9 @@ fn main() {
 
     let v = vec![1, 3, 5, 10, 90, 8, 80, 5, 10, 20, 10];
     println!("{:?}", mode(v));
+
+    let lat = String::from("pig latin english");
+    println!("{}", piglatin(lat));
 
 
 
